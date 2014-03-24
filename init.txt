@@ -1,1 +1,1 @@
-init ok
+init ok sur mac
