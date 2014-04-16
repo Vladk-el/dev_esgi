@@ -213,3 +213,16 @@ pip-log.txt
 
 #Mr Developer
 .mr.developer.cfg
+
+#############
+## Mac
+############
+.DS_Store
+
+
+#############
+## C - Projet hack wpa
+#############
+
+#Directory
+dico_complete/
