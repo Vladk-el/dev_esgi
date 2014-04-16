@@ -1,1 +1,2 @@
 init ok sur mac
+Ok sur Kali
