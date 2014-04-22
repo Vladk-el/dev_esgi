@@ -80,7 +80,7 @@ int main(int argc, char * args[]){
 
 	// faire une archi père / fils avec un wait pour attendre la fin des opérations
 
-	execl("uniq", "uniq", "dico_wpa_", "dico_wpa", NULL);
+	//execl("uniq", "uniq", "dico_wpa_", "dico_wpa", NULL);
 
 	//remove("dico_wpa_");
 
