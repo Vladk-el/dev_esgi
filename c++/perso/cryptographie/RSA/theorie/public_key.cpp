@@ -11,7 +11,7 @@
 	Ensuite, déterminez un nombre N tel que N = P * Q.
 	Ici N = 5141.
 
-	Calculons maintenant le nombre M, appelé "indicatrice d'Euler", qui correspond au nombre d'entiers naturels <= à N qui lui osnt premiers.
+	Calculons maintenant le nombre M, appelé "indicatrice d'Euler", qui correspond au nombre d'entiers naturels <= à N qui lui sont premiers.
 	M = (P - 1) * (Q - 1)
 	Ici M = 4992.
 
@@ -19,7 +19,7 @@
 	Ici on prend 7.
 
 	Au final, notre clé est composée de (M, C). 
-	Dans notre cas, notr eclé publique est (M = 5141, C = 7).
+	Dans notre cas, notre clé publique est (M = 4992, C = 7).
 
 
 

@@ -1,3 +1,10 @@
+/*
+	Vladk
+	MPZ
+	Simple example of the mpz_fdiv_qr() function, that allows a division and retrieve all the pieces
+*/
+
+
 #include <iostream>
 #include <gmpxx.h>
 

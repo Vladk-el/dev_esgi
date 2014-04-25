@@ -1,3 +1,10 @@
+/*
+    Vladk
+    MPZ 
+    Display few first-numbers
+*/
+
+
 /* Ce code a pour but d'afficher, grâce à une boucle, un nombre déterminé de nombres
  premiers */
 
@@ -15,10 +22,10 @@ int main(int argc, char **argv){
        //Cette fonction attribue à "a" le premier nombre premier après "a"
        mpz_nextprime(a.get_mpz_t(), a.get_mpz_t());
 
-        std::cout << a << " "; //On affiche le nombre a.
+        std::cout << a << " ";
     }
 
-    std::cout << std::endl; //On saute une ligne avant de quitter
+    std::cout << std::endl;
 
     return 0;
 }

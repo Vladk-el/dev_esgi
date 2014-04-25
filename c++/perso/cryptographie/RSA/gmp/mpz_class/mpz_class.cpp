@@ -1,3 +1,10 @@
+/*
+	Vladk
+	MPZ
+	Simple example of how to declare a mpz_class variable
+*/
+
+
 #include <iostream>
 #include <gmpxx.h>
 
