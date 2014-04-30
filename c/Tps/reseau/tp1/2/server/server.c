@@ -1,5 +1,5 @@
 /*
-	Vous allez écrire un client/serveur simple.
+	Vous allez écrire un client/serveur simple, mais qui gère plusieurs connexions simultanément.
 	Une fois la connexion établie, le serveur affiche l'identité du client (Adresse 
 	IP+Port).
 	Il envoie au client la date et l'heure courantes.
