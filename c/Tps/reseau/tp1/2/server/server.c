@@ -30,7 +30,7 @@
 int main(int argc, char * argv[]){
 	printf("Server\n");
 
-	int listen_fd, conn_fd, port;
+	int listen_fd, conn_fd, port, n;
 	socklen_t len;
 	struct sockaddr_in serv_addr, client_addr;
 	char addrIP[16], buff[50];
@@ -59,16 +59,26 @@ int main(int argc, char * argv[]){
 	for(;;){
 		len = sizeof(client_addr);
 		conn_fd = accept(listen_fd, (struct sockaddr *) & client_addr, (socklen_t *) &len);
-		port = ntohs(client_addr.sin_port);
-		inet_ntop(AF_INET, &client_addr.sin_addr, addrIP, sizeof(addrIP));
-		printf("Connexion de %s, port %d\n", addrIP, port);
+		n = fork();
+		if(n == 0){ // fils
+			printf("Passage au fils\n");
+			port = ntohs(client_addr.sin_port);
+			inet_ntop(AF_INET, &client_addr.sin_addr, addrIP, sizeof(addrIP));
+			printf("Connexion de %s, port %d\n", addrIP, port);
 
-		tempo = time(NULL);
-		snprintf(buff, sizeof(buff), "%.24s\n", ctime(&tempo));
-		//printf("buffer : %ssize : %d\n", buff, strlen(buff));
-		//printf("jhzeqhjzbhqvbhbv\n");
-		write(conn_fd, buff, strlen(buff)); // strlen(buff)
-		close(conn_fd);
+			tempo = time(NULL);
+			snprintf(buff, sizeof(buff), "%.24s\n", ctime(&tempo));
+			//printf("buffer : %ssize : %d\n", buff, strlen(buff));
+			//printf("jhzeqhjzbhqvbhbv\n");
+			write(conn_fd, buff, strlen(buff)); // strlen(buff)
+			close(listen_fd);
+			close(conn_fd);
+			exit(0);
+		}
+		if(n > 0){ // père
+			close(conn_fd);
+		}
+		
 	}
 }
 
